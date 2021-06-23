@@ -1,13 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { actionCreators } from '../store';
 
-const ToDo = ({ text, onDelBtnClick }) => {
+const ToDo = ({ id, text, onDelBtnClick }) => {
   return (
-    <li>
-      {text}
-      <button onClick={onDelBtnClick}>DEL</button>
-    </li>
+    <Link to={`/${id}`}>
+      <li>
+        {text}
+        <button onClick={onDelBtnClick}>DEL</button>
+      </li>
+    </Link>
   );
 };
 
